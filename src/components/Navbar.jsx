@@ -3,79 +3,59 @@ import {
   Navbar,
   NavItem,
   NavbarBrand,
-  NavbarToggler,
   NavLink,
   Collapse,
-  UncontrolledDropdown,
-  DropdownMenu,
-  DropdownToggle,
-  DropdownItem
-} from 'reactstrap';
+  NavbarToggler
+} from "reactstrap";
 import './Navbar.css'
 function NavbarComponent() {
   return (
-    <div>
+    <div className="shadow">
       <Navbar
-        color="dark"
-        dark
+        color="light"
+        light
         expand="md"
-        fixed="top"
-         >
-        <NavbarBrand href="/">
-          BloodBank
-        </NavbarBrand>
+        style={{
+          background: '#fff',
+          boxShadow: "0px 0px 5px 2px rgba(0,0,0,0.01)"
+        }}
+      > <div className="brand">
+          <NavbarBrand href="/">
+            BloodBank
+          </NavbarBrand>
+        </div>
         <NavbarToggler onClick={function noRefCheck() { }} />
-        <Collapse navbar>
-          <Nav
-            className="me-auto"
-            navbar >
-            <NavItem>
-              <NavLink href="/">
-                ABOUT US
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown
-              inNavbar
-              nav >
-              <DropdownToggle
-                nav>
-                LOOKING FOR BLOOD
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>
-                 OPT1
-                </DropdownItem>
-                <DropdownItem>
-                  OPT2
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <UncontrolledDropdown
-              inNavbar
-              nav >
-              <DropdownToggle
-                nav>
-                WANT TO DONATE
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>
-                  OPT1
-                </DropdownItem>
-                <DropdownItem>
-                  OPT2
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <NavItem>
-            <NavLink href="/">
-                LOGIN
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
+        <div className="items">
+          <Collapse navbar>
+            <Nav
+              classNameName="me-auto"
+              navbar >
+              <NavItem className="item">
+                <NavLink href="/">
+                  ABOUT US
+                </NavLink>
+              </NavItem>
+              <NavItem className="item">
+                <NavLink href="/stockAvailability">
+                  LOOKING FOR BLOOD
+                </NavLink>
+              </NavItem>
+              <NavItem className="item">
+                <NavLink href="/donateBlood">
+                  DONATE BLOOD
+                </NavLink>
+              </NavItem>
+              <NavItem className="item">
+                <NavLink href="/employeeLogin">
+                  BLOODBANK LOGIN
+                </NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </div>
       </Navbar>
     </div>
-  )
+  );
 }
 
-export default NavbarComponent
+export default NavbarComponent;
