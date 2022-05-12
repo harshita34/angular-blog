@@ -32,7 +32,7 @@ function NavbarComponent() {
               navbar >
               <NavItem className="item">
                 <NavLink href="/">
-                  ABOUT US
+                  Home
                 </NavLink>
               </NavItem>
               <NavItem className="item">
